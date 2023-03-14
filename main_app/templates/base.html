@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nourish</title>
+  <!--can change to different library, up to front end-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="navbar-fixed">
+    <nav class="orange darken-3">
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Nourish</a></li>
+        </ul>
+        <ul class="right">
+          <!--NAVBAR LINKS GOES HERE, CATEGORIES, SIGN IN/SIGN OUT-->
+          <!-- <li><a href="/about">About</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="page-footer">
+    <div class="right">2023 Nourish &nbsp;</div>
+  </footer>
+</body>
+</html>
