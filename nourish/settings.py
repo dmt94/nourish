@@ -80,21 +80,14 @@ WSGI_APPLICATION = 'nourish.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'GiselleMR/nourish',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PW'],
+        'HOST': 'db.bit.io',
+        'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': '',
-#         'USER': os.environ['DB_USER'],
-#         'PASSWORD': os.environ['DB_PW'],
-#         'HOST': 'db.bit.io',
-#         'PORT': '5432',
-#     }
-# }
 
 
 # Password validation
