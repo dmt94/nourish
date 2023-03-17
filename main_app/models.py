@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 #This is giselles comment
+#This is daevahs comment
 class Review(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
