@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 #This is daevahs comment
 #This is Sumis comment
 #this is Adas comment
+#This is jennys comment
 class Review(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
