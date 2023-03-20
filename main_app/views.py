@@ -35,6 +35,10 @@ def signup(request):
 class RestaurantList(ListView):
   model = Restaurant
 
+class RestaurantCreate(CreateView):
+  model = Restaurant
+  fields = ['name', 'description', 'category']
+
 class CategoryList(ListView):
   template_name = 'main_app/restaurant_categories.html'
 
