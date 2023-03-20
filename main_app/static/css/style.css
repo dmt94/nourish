@@ -9,3 +9,40 @@ footer * {
 nav {
   box-shadow: none;
 }
+
+
+main {
+  margin: 0 !important;
+}
+
+.custom-container {
+  margin: 0 !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-footer {
+  background-color: white;
+}
+
+#search-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./media/healthyheart.jpg");
+  height: 200px !important;
+  width: 400px !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#nourish-title {
+  color: white;
+}
+
+.circle-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
