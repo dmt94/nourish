@@ -42,4 +42,4 @@ class Restaurant(models.Model):
     
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
