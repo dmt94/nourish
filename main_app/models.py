@@ -9,9 +9,16 @@ from django.contrib.auth.models import User
 #This is Sumis comment
 #this is Adas comment
 #This is jennys comment
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
 class Review(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -22,6 +29,7 @@ class Review(models.Model):
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=100)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # add user_id FK column
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # create a M:M relationship with Review

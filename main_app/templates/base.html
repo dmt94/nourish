@@ -15,16 +15,17 @@
   <header class="navbar-fixed">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid ms-auto">
-        <a class="navbar-brand" href="#">Nourish</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Nourish</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" aria-current="page" href="{% url 'index' %}">Restaurants</a>
             <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-            <a class="nav-link" href="{% url 'login' %}">Login In</a>
-            <a class="nav-link" href="{% url 'logout' %}">Login Out</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             <a class="nav-link disabled">Disabled</a>
           </div>
         </div>
