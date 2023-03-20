@@ -9,6 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Restaurant, Review
+import googlemaps
 
 # Create your views here.
 def home(request):
@@ -45,3 +46,4 @@ class CategoryList(ListView):
   def get_queryset(self):
     self.category = get_object_or_404(Restaurant, name=self.kwargs['category'])
     return Restaurant.objects.filter(category=self.category)
+  
