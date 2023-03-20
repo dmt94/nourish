@@ -39,3 +39,7 @@ class Restaurant(models.Model):
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'restaurant_id': self.id})
+    
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.)
