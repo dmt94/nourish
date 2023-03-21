@@ -2,34 +2,14 @@
 
 {% block content %}
   <h2>List of Restaurants</h2>
-
+  
   {% for restaurant in object_list %}
-  <!-- <a href="{% url 'restaurant_detail' restaurant.id %}"> -->
-  <a href="">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ restaurant.name }}</span>
-        <p>About: {{ restaurant.description }}</p>   
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    </a>          
+  </div>      
   {% endfor %}
 
 {% endblock %}
-
-<!-- {% block content %}
-
-<h1> Restaurants List</h1>
-
-{% for restaurant in restaurants %}
-    <a href="{% url 'detail' restaurant.id %}">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">{{ restaurant.name }}</span>
-                <p>Description: {{ restaurant.description|linebreaks }}</p>
-                <p>Reviews: {{restaurant.reviews}}</p>
-            </div>
-        </div>
-    </a>
-{% endfor %}
-
-{% endblock %} -->

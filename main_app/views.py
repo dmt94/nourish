@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Restaurant, Review
 from googlemaps import Client as cl
 
+
 # Create your views here.
 def home(request):
   # Include an .html file extension - unlike when rendering EJS templates
