@@ -10,10 +10,6 @@
         <span class="card-title">{{ restaurant.name }}</span>
         <p>Description: {{ restaurant.description|linebreaks }}</p>
       </div>
-      <div class="card-action">
-        <a href="{% url 'restaurants_update' restaurant.id %}">Edit</a>
-        <a href="{% url 'restaurants_delete' restaurant.id %}">Delete</a>
-      </div>
     </div>
   </div>
 
@@ -80,11 +76,14 @@
           </div>
         </div>
       
-      <div class="row">
+        <div class="row">
+        {% for review in restaurant.reviews.all %}
         <div class="card">
-          <span class="card-content">Reviews</span>
-            <p>TEXT</p>
+            <span class="card-content">Reviews</span>
+            <p>{{ review }}</p>
+
           </div>
+        {% endfor %}
         </div>
       </div>
     </div>
