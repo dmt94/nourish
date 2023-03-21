@@ -52,4 +52,3 @@ def detailsview(request, restaurant_id):
   return render(request, 'restaurants/detail.html', {
   'restaurant': restaurant
 })
-
