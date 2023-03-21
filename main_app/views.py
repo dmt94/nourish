@@ -45,3 +45,9 @@ class CategoryList(ListView):
   def get_queryset(self):
     self.category = get_object_or_404(Restaurant, name=self.kwargs['category'])
     return Restaurant.objects.filter(category=self.category)
+  
+def detailsview(request, restaurant_id):
+  restaurant = Restaurant.objects.get(id=restaurant_id)
+  return render(request, 'restaurants/detail.html', {
+  'restaurant': restaurant
+})
