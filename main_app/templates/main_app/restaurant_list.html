@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>List of Restaurants</h2>
+
+  {% for restaurant in object_list %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ restaurant.name }}</span>
+            <p>Description: {{ restaurant.description|linebreaks }}</p>
+        </div>
+    </div>
+</a>       
+  {% endfor %}
+
+{% endblock %}

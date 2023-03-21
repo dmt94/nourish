@@ -3,8 +3,9 @@ from django.contrib import admin
 # create initial model first
 
 # Register your models here.
-# from .models import Reviews, Locations
+from .models import Category, Review, Restaurant
 
 # Register your models here
-# admin.site.register(Reviews)
-# admin.site.register(Locations)
+admin.site.register(Review)
+admin.site.register(Category)
+admin.site.register(Restaurant)

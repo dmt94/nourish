@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>User Favorites Page</h2>
+
+{% for restaurant in object_list %}  
+<a href="">
+    <div class="card">
+        <!-- <img src="" style="width:100%"> -->
+        <div class="container">
+            <h4><b>{{ restaurant.name }}</b></h4>
+            <!-- category goes here -->
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}
