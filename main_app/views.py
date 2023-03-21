@@ -9,6 +9,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Restaurant, Review
+from googlemaps import Client as cl
+
 
 # Create your views here.
 def home(request):
@@ -51,3 +53,4 @@ def detailsview(request, restaurant_id):
   return render(request, 'restaurants/detail.html', {
   'restaurant': restaurant
 })
+
