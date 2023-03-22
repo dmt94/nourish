@@ -52,7 +52,7 @@ class Favorites(LoginRequiredMixin, ListView):
 
 class ReviewCreate(LoginRequiredMixin, CreateView):
   model = Review
-  fields = ['title', 'description']
+  fields = ['title', 'description', 'restaurant']
 
   def form_valid(self, form):
     # Assign the logged in user (self.request.user)
