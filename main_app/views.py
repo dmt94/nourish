@@ -41,11 +41,12 @@ def CategoryList(request):
  return render(request, 'restaurants/categories.html')
   
 def detailsview(request, restaurant_id):
+  reviews = Review.objects.filter(restaurant=restaurant_id)
   restaurant = Restaurant.objects.get(id=restaurant_id)
   return render(request, 'restaurants/detail.html', {
+  'reviews' : reviews,
   'restaurant': restaurant
 })
-
 
 class Favorites(LoginRequiredMixin, ListView):
   model = Favorite
