@@ -39,7 +39,7 @@ class Review(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('reviews_detail', kwargs={'pk': self.id})
+        return reverse('detail', kwargs={'restaurant_id': self.id})
 
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
