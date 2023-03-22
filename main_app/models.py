@@ -33,7 +33,7 @@ class Review(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, related_name='restaurants', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

@@ -77,11 +77,10 @@
         </div>
       
         <div class="row">
-        {% for review in restaurant.reviews.all %}
+        {% for review in reviews.all %}
         <div class="card">
             <span class="card-content">Reviews</span>
             <p>{{ review }}</p>
-
           </div>
         {% endfor %}
         </div>
