@@ -16,14 +16,14 @@ main {
   margin: 0 !important;
 }
 
-body.home{
+body.home {
   background: url(https://i.imgur.com/srD46Fo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.home-search {
-  opacity: 1;
+.nav-logo {
+  width: 50px;
 }
 
 .custom-container {
