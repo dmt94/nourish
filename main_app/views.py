@@ -40,12 +40,8 @@ class RestaurantCreate(CreateView):
   model = Restaurant
   fields = ['name', 'description', 'category']
 
-class CategoryList(ListView):
-  template_name = 'main_app/restaurant_categories.html'
-
-  def get_queryset(self):
-    self.category = get_object_or_404(Restaurant, name=self.kwargs['category'])
-    return Restaurant.objects.filter(category=self.category)
+def CategoryList(request):
+ return render(request, 'restaurants/categories.html')
   
 def detailsview(request, restaurant_id):
   restaurant = Restaurant.objects.get(id=restaurant_id)
