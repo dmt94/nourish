@@ -51,3 +51,6 @@ def detailsview(request, restaurant_id):
 
 class Favorites(ListView):
   model = Favorite
+
+class ReviewCreate(LoginRequiredMixin, CreateView):
+  model = Review
