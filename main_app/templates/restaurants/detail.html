@@ -80,7 +80,8 @@
         {% for review in reviews.all %}
         <div class="card">
             <span class="card-content">Reviews</span>
-            <p>{{ review }}</p>
+            <p>{{ review.title }}</p>
+            <p>{{ review.description }}</p>
           </div>
         {% endfor %}
         </div>

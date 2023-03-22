@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .models import Restaurant, Review, Favorite
 from googlemaps import Client as cl
+from django.urls import reverse
 
 # Create your views here.
 def home(request):
@@ -53,13 +54,15 @@ class Favorites(LoginRequiredMixin, ListView):
 
 class ReviewCreate(LoginRequiredMixin, CreateView):
   model = Review
-  fields = ['title', 'description']
+  fields = ['title', 'description', 'restaurant']
 
   def form_valid(self, form):
     # Assign the logged in user (self.request.user)
-    form.instance.user = self.request.user  # form.instance is the finch
-     # Let the CreateView do its job as usual
-    return super().form_valid(form)
+    form.instance.user = self.request.user
+    review = form.save()
+    id = review.restaurant.id
+    url = reverse('detail', args=[id])
+    return redirect(url)
 
 class ReviewDelete(LoginRequiredMixin, DeleteView):
   model = Review
