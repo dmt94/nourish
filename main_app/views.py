@@ -66,5 +66,6 @@ class ReviewCreate(LoginRequiredMixin, CreateView):
 
 class ReviewDelete(LoginRequiredMixin, DeleteView):
   model = Review
-  success_url = '/reviews'
   fields = ['title', 'description']
+  def get_success_url(self):
+    return reverse('detail', args=[self.object.restaurant.id])

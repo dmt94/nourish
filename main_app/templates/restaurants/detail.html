@@ -82,6 +82,7 @@
             <span class="card-content">Reviews</span>
             <p>{{ review.title }}</p>
             <p>{{ review.description }}</p>
+            <a href="{% url 'review_delete' review.id %}">Delete</a>
           </div>
         {% endfor %}
         </div>
