@@ -1,13 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView, DetailView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Restaurant, Review, Favorite
 from googlemaps import Client as cl
 
@@ -44,13 +41,27 @@ def CategoryList(request):
  return render(request, 'restaurants/categories.html')
   
 def detailsview(request, restaurant_id):
+  reviews = Review.objects.filter(restaurant=restaurant_id)
   restaurant = Restaurant.objects.get(id=restaurant_id)
   return render(request, 'restaurants/detail.html', {
+  'reviews' : reviews,
   'restaurant': restaurant
 })
 
-class Favorites(ListView):
+class Favorites(LoginRequiredMixin, ListView):
   model = Favorite
 
 class ReviewCreate(LoginRequiredMixin, CreateView):
   model = Review
+  fields = ['title', 'description']
+
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user  # form.instance is the finch
+     # Let the CreateView do its job as usual
+    return super().form_valid(form)
+
+class ReviewDelete(LoginRequiredMixin, DeleteView):
+  model = Review
+  success_url = '/reviews'
+  fields = ['title', 'description']

@@ -9,4 +9,6 @@ urlpatterns = [
   path('restaurants/create/', views.RestaurantCreate.as_view(), name='restaurant_create'),
   path('favorites/', views.Favorites.as_view(), name='favorites'),
   path('restaurants/<int:restaurant_id>/', views.detailsview, name='detail'),
+  path('review/create/', views.ReviewCreate.as_view(), name='review_create'),
+  path('review/<int:pk>/delete/', views.ReviewDelete.as_view(), name='review_delete'),
 ]
