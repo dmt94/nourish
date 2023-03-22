@@ -1,11 +1,22 @@
-
-
-{% block content %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nourish</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="home">
+    
+    <div class="home-search">
+        <input type="text" placeholder="Zipcode">
+        <button onclick="location.href = '/categories'">Search</button>
+    </div>
+    {% block content %}
+    {% endblock %}
 
-<h2 id="nourish-title">Nourish Homepage</h2>
 
-<input type="text" placeholder="Zipcode">
-<button onclick="location.href = '/categories'">Search</button>
-
-{% endblock %}
+</body>
+</html>
