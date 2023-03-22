@@ -52,17 +52,3 @@ class Favorites(LoginRequiredMixin, ListView):
 
 class ReviewCreate(LoginRequiredMixin, CreateView):
   model = Review
-  fields = ['title', 'description']
-
-  def form_valid(self, form):
-    # Assign the logged in user (self.request.user)
-    form.instance.user = self.request.user  # form.instance is the finch
-     # Let the CreateView do its job as usual
-    return super().form_valid(form)
-
-class ReviewDelete(LoginRequiredMixin, DeleteView):
-  model = Review
-  success_url = '/reviews'
-  fields = ['title', 'description']
-
- 
