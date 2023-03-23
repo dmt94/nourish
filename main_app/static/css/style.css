@@ -16,14 +16,14 @@ main {
   margin: 0 !important;
 }
 
-body.home{
+body.home {
   background: url(https://i.imgur.com/srD46Fo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.home-search {
-  opacity: 1;
+.nav-logo {
+  width: 50px;
 }
 
 .custom-container {
@@ -34,18 +34,6 @@ body.home{
 
 .page-footer {
   background-color: white;
-}
-
-#search-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-image: url("./media/healthyheart.jpg");
-  height: 200px !important;
-  width: 400px !important;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #nourish-title {

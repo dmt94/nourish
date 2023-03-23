@@ -15,31 +15,32 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Review(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
-    
-    def get_absolute_url(self):
-        return reverse('reviews_detail', kwargs={'pk': self.id})
-
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=100)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # add user_id FK column
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # create a M:M relationship with Review
-    reviews = models.ManyToManyField(Review)
+    # # create a M:M relationship with Review
+    # reviews = models.ManyToManyField(Review)
     def __str__(self):
         return f'{self.name} ({self.id})'
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'restaurant_id': self.id})
+
+class Review(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=1000)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, related_name='restaurants', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
     
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'restaurant_id': self.id})
+
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)

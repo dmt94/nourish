@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView, DetailView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Restaurant, Review, Favorite
 from googlemaps import Client as cl
+from django.urls import reverse
 
 # Create your views here.
 def home(request):
@@ -44,10 +42,30 @@ def CategoryList(request):
  return render(request, 'restaurants/categories.html')
   
 def detailsview(request, restaurant_id):
+  reviews = Review.objects.filter(restaurant=restaurant_id)
   restaurant = Restaurant.objects.get(id=restaurant_id)
   return render(request, 'restaurants/detail.html', {
+  'reviews' : reviews,
   'restaurant': restaurant
 })
 
-class Favorites(ListView):
+class Favorites(LoginRequiredMixin, ListView):
   model = Favorite
+
+class ReviewCreate(LoginRequiredMixin, CreateView):
+  model = Review
+  fields = ['title', 'description', 'restaurant']
+
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user
+    review = form.save()
+    id = review.restaurant.id
+    url = reverse('detail', args=[id])
+    return redirect(url)
+
+class ReviewDelete(LoginRequiredMixin, DeleteView):
+  model = Review
+  fields = ['title', 'description']
+  def get_success_url(self):
+    return reverse('detail', args=[self.object.restaurant.id])
