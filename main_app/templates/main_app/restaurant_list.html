@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>List of Restaurants</h2>
+<h2 id="title">List of Restaurants</h2>
+<div class="grid restaurant-list-div">
   
   {% for restaurant in object_list %}
   <div class="card" style="width: 18rem;">
@@ -9,11 +10,14 @@
     <div class="card-body">
       <a href="{% url 'detail' restaurant.id %}">
         <div class="card-content">
-          <span class="card-title">{{ restaurant.name }}</span>
-          <p>About: {{ restaurant.description }}</p>   
+          <span class="restaurant-title">{{ restaurant.name }}</span>
+          <p>{{ restaurant.description }}</p>
+          <div class="category flex-row">
+            <p>{{restaurant.category}}</p></div>   
+        </div>
       </a>
     </div>
   </div>      
   {% endfor %}
-
+</div>
 {% endblock %}

@@ -17,7 +17,7 @@ class Category(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=100)
+    description = models.TextField(max_length=500)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     # add user_id FK column
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,94 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Restaurant Details</h1>
+<!-- <h1>Restaurant Details</h1> -->
 
-<div class="row">
-  <div class="col s6">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ restaurant.name }}</span>
-        <p>Description: {{ restaurant.description|linebreaks }}</p>
-      </div>
+<div>
+  <div class="image-header flex-row">
+    <!-- <img class="restaurant-photos" src="https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""> -->
+  </div>
+</div>
+<div class="flex-row detail-row">
+  <div class="flex-col restaurant-info">
+    <h2>{{ restaurant.name }}</h2>
+    <a class="add-review-btn" href="{% url 'review_create' %}">Add Review</a>
+    <div class="flex-row">
+      <p>phone logo?</p>
+      <p>phone number?</p>
     </div>
   </div>
-
-
-  
-<div class="container">
-  <!--row 1-->
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <span class="card-content"> Restaurant Photo</span>
-          <p>PHOTO</p>
-        </div>
-      </div>
+  <div class="flex-col">
+    <div class="restaurant-description">
+      <h4 class="res-detail-category">{{ restaurant.category }}</h4>
+      <p>{{ restaurant.description }}</p>
     </div>
-
-  <!--Row 2, Column 1-->
-  <div class="row">
-    <div class="col-3">
-      <div class="row">
-        <div class="card">
-          <span class="card-content"> Restaurant Name</span>
-          <p>TEXT</p>
+    <div class="restaurant-reviews">
+      <h2>Reviews</h2>
+      {% for review in reviews.all %}
+      <div class="restaurant-review-box">
+        <p id="user-review-name">{{ review.user }}</p>
+        <p class="review-title">{{ review.title }}</p>
+        <p>{{ review.description }}</p>
+        {% if user == review.user %}
+        <a class="delete-review-btn" href="{% url 'review_delete' review.id %}">Delete</a>
+        {% endif %}
         </div>
-      </div>
-      <div class="row">
-        <div class="card">
-          <span class="card-content">Phone Number</span>
-          <p>NUMBERS</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card">
-          <span class="card-content">Rating</span>
-          <p>STARS</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card">
-          <span class="card-content">Icons</span>
-          <p>PHOTO</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card">
-          <span class="card-content">Share</span>
-          <p>BUTTON</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card">
-          <span class="card-content">Add Review</span>
-          <a href="{% url 'review_create' %}">Add Review for {{ restaurant.name }}</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-   
-    <!-- Row 2, column 2-->
-    <div class="col">
-      <div class="row">
-        <div class="card">
-          <span class="card-content">Description</span>
-            <p>TEXT</p>
-          </div>
-        </div>
-      
-        <div class="row">
-        {% for review in reviews.all %}
-        <div class="card">
-            <span class="card-content">Reviews</span>
-            <p>{{ review.title }}</p>
-            <p>{{ review.description }}</p>
-            <a href="{% url 'review_delete' review.id %}">Delete</a>
-          </div>
-        {% endfor %}
-        </div>
-      </div>
-    </div>
+  </div>
 </div>
-
 
 {% endblock %}

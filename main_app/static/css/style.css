@@ -20,6 +20,16 @@ body.home {
   background: url(https://i.imgur.com/srD46Fo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;    
+}
+
+.custom-container #image-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3vmin;
+  gap: 2vmin;
+  flex-wrap: wrap;
 }
 
 .nav-logo {
@@ -45,3 +55,165 @@ body.home {
   height: 200px;
   border-radius: 50%;
 }
+.circle-container img:hover {
+  opacity: 0.8
+}
+
+footer {
+  margin-top: 40vmin;
+}
+
+header {
+  background-color: rgba(180, 209, 156, 0.75);
+  height: 20vmin;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  margin: 0 1vmin 1vmin 3vmin;
+  text-decoration: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a:hover {
+  opacity: 0.4;
+}
+
+.card {
+  background-color: rgb(53, 134, 150);
+  margin: 2vmin;
+  padding: 2vmin;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.card:hover {
+  opacity: 0.7;
+}
+
+.card * {
+  text-decoration: none;
+  color: white
+}
+
+.restaurant-title {
+  font-size: 4vmin;
+}
+
+.image-header {
+  background-color: rgba(245, 245, 220, 0);
+  margin: 2vmin;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex-wrap: wrap;
+}
+
+.detail-row {
+  justify-content: space-evenly;
+}
+
+.restaurant-photos {
+  width: 80vmin;
+}
+
+.add-review-btn, a {
+  text-decoration: none;
+  color: black
+}
+
+.add-review-btn {
+  padding: 1vmin;
+  border: 1px solid black;
+}
+
+.add-review-btn:hover {
+  background-color: black;
+  color: white
+}
+
+.restaurant-info {
+  justify-content: flex-start;
+}
+
+
+
+.restaurant-description {
+  margin: 2vmin;
+}
+
+.review-title,
+.res-detail-category {
+  text-transform: uppercase;
+}
+
+.restaurant-description * {
+  max-width: 300px;
+}
+
+.restaurant-review-box {
+  border: 1px solid black;
+  margin: 2vmin 0;
+  padding: 4vmin;
+  max-width: 400px;
+}
+
+#user-review-name {
+  font-weight: 800;
+}
+
+.delete-review-btn,
+.res-detail-category {
+  border: 1px solid black;
+  padding: 1vmin;
+}
+.delete-review-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* restaurant list view */
+.restaurant-list-div,
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category,
+#title {
+  text-align: center;
+}
+
+.category * {
+  border: 1px solid white;
+  padding: 1vmin;
+  max-width: fit-content;
+  text-align: center;
+}
+
+/* forms */

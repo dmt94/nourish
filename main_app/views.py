@@ -46,7 +46,8 @@ def detailsview(request, restaurant_id):
   restaurant = Restaurant.objects.get(id=restaurant_id)
   return render(request, 'restaurants/detail.html', {
   'reviews' : reviews,
-  'restaurant': restaurant
+  'restaurant': restaurant,
+  'user': request.user
 })
 
 class Favorites(LoginRequiredMixin, ListView):
