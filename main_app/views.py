@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Restaurant, Review, Favorite
 from googlemaps import Client as cl
 from django.urls import reverse
+import os
+import environ
 
 # Create your views here.
 def home(request):
@@ -39,7 +41,12 @@ class RestaurantCreate(CreateView):
   fields = ['name', 'description', 'category']
 
 def CategoryList(request):
- return render(request, 'restaurants/categories.html')
+  g_api = os.environ['GOOGLE_MAP']
+  gmaps = cl(key= g_api)
+  restaurants = gmaps.places_nearby(location='34.020479,-118.4117325', radius=500, type='restaurant')
+  context = {'restaurants': restaurants}
+  return render(request, 'restaurants/categories.html', {'context': context, 'g_api': g_api})
+#  return render(request, 'restaurants/categories.html')
   
 def detailsview(request, restaurant_id):
   reviews = Review.objects.filter(restaurant=restaurant_id)
