@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;500&display=swap');
+
+* {
+  font-family: 'League Spartan', sans-serif;
+}
+
 .custom-container #image-wrapper {
   display: flex;
   justify-content: space-around;
@@ -8,7 +14,9 @@
 }
 
 footer {
-  margin-top: 40vmin;
+  /* margin-top: 40vmin; */
+  display: flex;
+  justify-content: center;
 }
 
 header {
@@ -149,6 +157,10 @@ header {
   align-items: center;
 }
 
+.restaurant-list-div {
+  margin-bottom: 20vmin;
+}
+
 .category,
 #title {
   text-align: center;
@@ -206,7 +218,8 @@ body.home {
 }
 
 .page-footer {
-  background-color: white;
+  background-color: rgba(180, 209, 156, 0.75);
+  padding: 2vmin;
 }
 
 #nourish-title {
@@ -471,4 +484,65 @@ body.home {
   flex-direction : column ;
   justify-content : center ;
   align-items : center ;
+}
+
+/* login form */
+.login-form {
+  display: flex;
+}
+
+.login-form > div > form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* review form  */
+.review-form-div {
+  background-color: rgb(247, 239, 224);
+  border-top: 10px solid rgba(180, 209, 156, 0.75);
+  padding: 4vmin;
+}
+
+.review-bg {
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),  url(https://i.imgur.com/8dqAL1t.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.review-bg * {
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+tr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vmin;
+}
+
+.review-btn {
+  padding: 1vmin;
+  color: white;
+  background-color: rgba(180, 209, 156, 0.75);
+  border: none;
+  font-weight: 500;
+  font-size: 2vmin;
+  letter-spacing: 2px;
+}
+
+.review-btn:hover {
+  background-color: rgba(180, 209, 156, 0.35);
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

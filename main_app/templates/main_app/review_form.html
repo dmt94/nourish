@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="center-form flex-col">
-<h1>Add Reviews</h1>
+<div class="review-bg">
+  <div class="center-form flex-col review-form-div">
+  <h1>Add Reviews</h1>
 
-<!-- Leaving the action empty makes the form post to the same url used to display it -->
-<form action="" method="POST">
-    <!-- Django requires the following for security purposes -->
-    {% csrf_token %}
-    <table>
-      <!-- Render the inputs inside of <tr>s & <td>s -->
-      {{ form.as_table }}
-    </table>
-  
-  <input type="submit" value="Submit!" class="btn">
-  </form>
-  {% endblock %}
+  <!-- Leaving the action empty makes the form post to the same url used to display it -->
+  <form action="" method="POST">
+      <!-- Django requires the following for security purposes -->
+      {% csrf_token %}
+      <table>
+        <!-- Render the inputs inside of <tr>s & <td>s -->
+        {{ form.as_table }}
+      </table>
+    
+    <input type="submit" value="Submit" class="btn review-btn">
+    </form>
+    {% endblock %}
+  </div>
 </div>
