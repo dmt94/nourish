@@ -216,4 +216,115 @@ header {
   text-align: center;
 }
 
-/* forms */
+/* Sumi */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+}
+
+footer * {
+  color: black;
+}
+
+nav {
+  box-shadow: none;
+}
+
+main {
+  margin: 0 !important;
+}
+
+/* input[type=text] {
+  border: 0;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  border: 0px;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+} */
+
+body.home {
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),  url(https://i.imgur.com/srD46Fo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+}
+
+.nav-logo {
+  width: 50px;
+}
+
+.custom-container {
+  margin: 0 !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-footer {
+  background-color: white;
+}
+
+#nourish-title {
+  color: white;
+}
+
+.circle-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* home input style */
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid darkgray;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}

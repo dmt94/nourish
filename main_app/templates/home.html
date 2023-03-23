@@ -10,9 +10,13 @@
 </head>
 <body class="home">
     
-  <img src="{% static '/media/nourish.svg' %}" alt="Nourish">
+  <img src="{% static '/media/nourish.svg' %}" alt="Nourish" class="home-logo">
     <div class="home-search">
-        <input type="text" placeholder="Zipcode">
+        <!-- <input type="text" placeholder="Zipcode"> -->
+        <div class="form__group field">
+          <input type="input" class="form__field" placeholder="Zipcode" name="name" id='name' required />
+          <label class="form__label"></label>
+        </div>
         <button onclick="location.href = '/categories'">Search</button>
     </div>
     {% block content %}
