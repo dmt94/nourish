@@ -17,11 +17,11 @@
 </head>
 <body>
   <header class="navbar-fixed">
+    <img id="logo-img" src="{% static '/media/nourish.svg' %}" alt="logo image">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
       <a class="nav-link" aria-current="page" href="{% url 'index' %}">Restaurants</a>
       {% if user.is_authenticated %}
-      <!-- <img src="{% static '/media/nourish' %}" alt="Nourish" class="nav-logo"> -->
       <a class="nav-link" aria-current="page" href="{% url 'favorites' %}">{{ user }}'s Favorites</a>
       <a class="nav-link" href="{% url 'logout' %}">Logout</a>
       {% else %}

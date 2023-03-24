@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>User Favorites Page</h2>
-
-
+<div class="center-form flex-col favorite-list-div">
+  <h2>User Favorites Page</h2>
+  <ul>
+    {% for favorite in favorites %}
+        <li>
+          <a class="favorite-restaurant-link" href="{% url 'detail' favorite.restaurant.id %}">{{ favorite.restaurant.name }}</a>
+        </li>        
+    {% empty %}
+        <li>No favorites yet</li>
+    {% endfor %}
+  </ul>
+</div>
 
 {% endblock %}

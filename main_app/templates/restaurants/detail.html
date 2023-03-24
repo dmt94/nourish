@@ -1,20 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- <h1>Restaurant Details</h1> -->
-
 <div>
-  <div class="image-header flex-row">
-    <!-- <img class="restaurant-photos" src="https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""> -->
-  </div>
 </div>
 <div class="flex-row detail-row">
   <div class="flex-col restaurant-info">
     <h2>{{ restaurant.name }}</h2>
     <a class="add-review-btn" href="{% url 'review_create' %}">Add Review</a>
+    <a href="{% url 'add_favorite' restaurant.id %}" class="add-favorite-btn">Add to Favorite</a>
     <div class="flex-row">
-      <p>phone logo?</p>
-      <p>phone number?</p>
     </div>
   </div>
   <div class="flex-col">

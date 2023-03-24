@@ -37,7 +37,6 @@
 <div id="map"></div>
 <div id="infowindow-content">
     <span id="place-name" class="title"></span><br />
-    <!-- <span id="place-id"></span><br /> -->
     <span id="place-address"></span>
 </div>
 <script>
@@ -49,7 +48,6 @@
         });
         
         const input = document.getElementById("map-input");
-        // Specify just the place data fields that you need.
         const autocomplete = new google.maps.places.Autocomplete(input, {
             fields: ["place_id", "geometry", "formatted_address", "name"],
         });
@@ -80,16 +78,12 @@
             map.setZoom(17);
         }
 
-        // Set the position of the marker using the place ID and location.
-        // @ts-ignore This should be in @typings/googlemaps.
         marker.setPlace({
             placeId: place.place_id,
             location: place.geometry.location,
         });
         marker.setVisible(true);
         infowindowContent.children.namedItem("place-name").textContent = place.name;
-        // infowindowContent.children.namedItem("place-id").textContent =
-        //     place.place_id;
         infowindowContent.children.namedItem("place-address").textContent =
             place.formatted_address;
         infowindow.open(map, marker);

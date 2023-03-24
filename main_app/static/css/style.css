@@ -14,17 +14,16 @@
 }
 
 footer {
-  /* margin-top: 40vmin; */
   display: flex;
   justify-content: center;
 }
 
 header {
   background-color: rgba(180, 209, 156, 0.75);
-  height: 20vmin;
+  height: 10vmin;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -102,14 +101,26 @@ header {
   color: black
 }
 
-.add-review-btn {
+.add-review-btn,
+.add-favorite-btn,
+.btn {
   padding: 1vmin;
   border: 1px solid black;
+  margin-bottom: 3vmin;
+  background-color: white;
 }
 
-.add-review-btn:hover {
+.add-review-btn:hover, 
+.btn:hover {
+  cursor: pointer;
   background-color: black;
   color: white
+}
+
+.add-favorite-btn:hover {
+  background-color: rgba(251, 28, 28, 0.864);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .restaurant-info {
@@ -155,10 +166,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.restaurant-list-div {
-  margin-bottom: 20vmin;
 }
 
 .category,
@@ -230,6 +237,7 @@ body.home {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin: 7vmin auto;
 }
 
 .circle-container img:hover {
@@ -264,9 +272,7 @@ body.home {
   font-size: 1rem;
 }
 
-/* Entry Home button */
 :root{
-  /* color type A */
   --line_color : #000000 ;
   --back_color : #FFECF6  ;
 }
@@ -486,7 +492,6 @@ body.home {
   align-items : center ;
 }
 
-/* login form */
 .login-form {
   display: flex;
 }
@@ -496,7 +501,10 @@ body.home {
   flex-direction: column;
 }
 
-/* review form  */
+.helptext {
+  display: none;
+}
+
 .review-form-div {
   background-color: rgb(247, 239, 224);
   border-top: 10px solid rgba(180, 209, 156, 0.75);
@@ -515,7 +523,7 @@ body.home {
 }
 
 .review-bg * {
-  font-weight: 200;
+  font-weight: 300;
   text-transform: uppercase;
 }
 
@@ -545,4 +553,38 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#logo-img {
+  width: 200px;
+  justify-content: flex-start;
+}
+
+.favorite-list-div,
+.restaurant-list-div,
+.form-div {
+  margin-bottom: 50vmin;
+}
+
+.favorite-list-div ul li {
+  margin: 2vmin;
+  font-size: 3vmin;
+  list-style: none;
+}
+
+.favorite-list-div ul li:before {
+  content: "\2665";
+  color: #de354e
+}
+
+.favorite-restaurant-link:hover {
+  opacity: 0.5;
+}
+
+
+@media screen and (max-width: 480px) {
+  .circle-container img {
+    width: 50px;
+    height: 50px;
+  }
 }

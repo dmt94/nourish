@@ -2,13 +2,7 @@ from django.db import models
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
-# Create your models here.
 
-#This is giselles comment
-#This is daevahs comment
-#This is Sumis comment
-#this is Adas comment
-#This is jennys comment
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
