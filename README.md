@@ -7,6 +7,8 @@ ___
 - Create a user account to save favorite restaurants
 - Search for restaurants based on dietary restrictions or preferences
 - CRUD functionality. Be able to create, read, and delete reviews to restaurants
+- Clicking restaurant categories will bring users to list of filtered restaurants
+- Implemented Google Place ID Finder API to display google maps
 
 
 #### Screenshot
@@ -28,6 +30,8 @@ ___
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 <br>
 <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green">
+<br>
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 <br>
 <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white">
 <br>
