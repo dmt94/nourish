@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="form-div center-form flex-col">
     <h1>Delete Review</h1>
 
     <h4>Are you sure you want to delete <span class="teal-text">{{object.name}}</span></h4>
@@ -9,4 +10,5 @@
         <input type="submit" class="btn red" value="Yes"/>
         <a href="{% url 'detail' object.id %}" class="btn blue">Cancel</a>
     </form>
+  </div>
 {% endblock %}
